@@ -162,7 +162,7 @@ Janus.init = function(options) {
 				}
 			}
 			if(src === 'adapter.js') {
-				if(window.getUserMedia && window.RTCPeerConnection) {
+				if(navigator.getUserMedia && window.RTCPeerConnection) {
 					// Already loaded
 					done();
 					return;
@@ -185,7 +185,7 @@ Janus.init = function(options) {
 
 // Helper method to check whether WebRTC is supported by this browser
 Janus.isWebrtcSupported = function() {
-	return window.RTCPeerConnection && window.getUserMedia;
+	return window.RTCPeerConnection && navigator.getUserMedia;
 };
 
 function Janus(gatewayCallbacks) {
